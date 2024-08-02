@@ -1,0 +1,7 @@
+node_modules
+scaffolding
+plopfile.js
+package.json
+.eslintrc.js
+next-env.d.ts
+.eslintrc.js

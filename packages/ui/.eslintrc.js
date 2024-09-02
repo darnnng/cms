@@ -17,8 +17,9 @@ module.exports = {
           "^tailwind\\.js$",
           "^tailwind\\.config\\.js$",
           "^config\\.ts$",
-        ],
-      },
-    ],
-  },
+          "^*\\.ts$"
+        ]
+      }
+    ]
+  }
 };

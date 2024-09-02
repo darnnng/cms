@@ -1,102 +1,65 @@
 import Image from "next/image";
 import { Button } from "ui/src/components";
-import styles from "./page.module.css";
+import { AnimatedNumber } from "~/components/AnimatedNumber";
+import apartBuy from "~/public/apartBuy.jpg";
+import apartRent from "~/public/apartRent.jpg";
+import commercialRent from "~/public/commercial.jpeg";
+import glampingImage from "~/public/glamping.jpg";
+import houseBuy from "~/public/house-in-tbilisi-5.jpg";
+import houseRent from "~/public/house.jpg";
 
 export default function Home() {
   return (
-    <div className="text-sm">
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li className="text-xs">
-            Get started by EDITING <code>app/page.tsx</code>
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+    <main className="flex flex-col px-32 justify-center m-auto">
+      <div className="grid grid-cols-4 grid-rows-[minmax(100px,350px)] px-64 py-32 gap-32">
+        <div className="row-span-1 col-span-1">
+          <p>
+            {" "}
+            Here you will find some text.Here you will find some text.Here you
+            will find some text.
+          </p>
+          <Image
+            src={apartBuy}
+            alt="Apartment to buy"
+            className="rounded-2xl"
+          />
         </div>
-        <Button
-          appName="web"
-          className="mx-auto rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-        >
-          Open alert
-        </Button>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <div className="row-span-1">
           <Image
-            aria-hidden
-            src="/file-text.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            src={apartRent}
+            alt="Apartment to rent"
+            className="rounded-2xl"
           />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+          <Button>See all</Button>
+        </div>
+        <div className="col-span-2 row-span-1">
+          <Image src={glampingImage} alt="Glamping" className="rounded-xl" />
+        </div>
+        <div className="col-span-1">
+          {" "}
           <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
+            src={commercialRent}
+            alt="Commercial rent"
+            className="rounded-2xl"
           />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        </div>
+        <div className="row-span-1 col-span-2">
           <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
+            src={houseBuy}
+            alt="Houses to rent"
+            className="rounded-2xl object-contain"
           />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        </div>
+        <div className="row-span-2">
+          <p>There will be some text here.here will be some text here.</p>
+          <Image src={houseRent} alt="Houses to rent" className="rounded-2xl" />
+        </div>
+        <div className="row-span-2"> </div>
+      </div>
+
+      <h1 className="text-3xl flex flex-row">
+        more than <AnimatedNumber /> objects available
+      </h1>
+    </main>
   );
 }

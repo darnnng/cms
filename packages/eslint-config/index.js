@@ -12,33 +12,34 @@ module.exports = {
     "plugin:unicorn/recommended",
     "plugin:sonarjs/recommended",
     "plugin:jsx-a11y/recommended",
-    "plugin:react/jsx-runtime",
+    "plugin:react/jsx-runtime"
   ],
   plugins: ["@typescript-eslint", "prettier"],
   settings: {
     next: {
-      rootDir: ["apps/*/"],
+      rootDir: ["apps/*/"]
     },
     react: {
       rootDir: ["packages/*/"],
-      version: "detect",
+      version: "detect"
     },
     "mdx/code-blocks": true,
     "mdx/language-mapper": {},
     "import/parsers": {
-      "@typescript-eslint/parser": [".ts", ".tsx"],
-    },
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    }
   },
   rules: {
     "@typescript-eslint/no-explicit-any": "error",
     "@next/next/no-html-link-for-pages": "off",
     "react/react-in-jsx-scope": "off",
     "unicorn/filename-case": "off",
+    "unicorn/no-null": "off",
     "@typescript-eslint/no-unused-vars": [
       "warn",
       {
-        ignoreRestSiblings: true,
-      },
+        ignoreRestSiblings: true
+      }
     ],
     "no-unused-vars": ["warn"],
     "unicorn/prevent-abbreviations": [
@@ -47,14 +48,14 @@ module.exports = {
         allowList: {
           Props: true,
           props: true,
-          generateStaticParams: true,
+          generateStaticParams: true
         },
         replacements: {
           cxt: {
-            context: true,
-          },
-        },
-      },
+            context: true
+          }
+        }
+      }
     ],
     curly: [2, "all"],
     "react/no-array-index-key": "error",
@@ -62,18 +63,18 @@ module.exports = {
     "react/require-default-props": [
       "error",
       {
-        ignoreFunctionalComponents: true,
-      },
+        ignoreFunctionalComponents: true
+      }
     ],
     "no-restricted-syntax": [
       "error",
       {
         selector: "TSEnumDeclaration",
-        message: "Use union literals instead of enums",
-      },
+        message: "Use union literals instead of enums"
+      }
     ],
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/exhaustive-deps": "warn"
   },
   overrides: [
     {
@@ -82,34 +83,34 @@ module.exports = {
       rules: {
         "unicorn/filename-case": [
           "error",
-          { case: "kebabCase", ignore: ["^README\\.md$"] },
-        ],
-      },
+          { case: "kebabCase", ignore: ["^README\\.md$"] }
+        ]
+      }
     },
     {
       files: ["*.test.[jt]s?(x)"],
       extends: ["plugin:testing-library/react"],
       rules: {
-        "testing-library/prefer-user-event": "error",
-      },
+        "testing-library/prefer-user-event": "error"
+      }
     },
     {
       files: [".eslintrc.js", "tsconfig.json", "postcss.config.js"],
       rules: {
-        "unicorn/prefer-module": "off",
-      },
+        "unicorn/prefer-module": "off"
+      }
     },
     {
       files: ["*.tsx", "*.jsx"],
       rules: {
-        "unicorn/no-null": "off",
-      },
+        "unicorn/no-null": "off"
+      }
     },
     {
       files: ["*.ts"],
       rules: {
-        "no-undef": "off",
-      },
-    },
-  ],
+        "no-undef": "off"
+      }
+    }
+  ]
 };
